@@ -67,9 +67,28 @@ function truncate(str) {
   }
 }
 
-function emailify(name) {
-  
+function emailify(str) {
+  str = str.toLowerCase();
+  let space = str.indexOf(" ");
+  if (space === -1) {
+    return str[0];
+  }
+  let output = "";
+  for (let i = 0; i < space; i++) {
+    if (i === 0) {
+      output += str[i];
+    }
+  }
+  for (let i = space; i < str.length; i++) {
+    if (str[i] !== " ") {
+      output += str[i];
+    }
+  }
+  output += ".prsvr@gmail.com";
+  return output;
 }
+
+
 
 function reverse(str) {
   let result = "";
